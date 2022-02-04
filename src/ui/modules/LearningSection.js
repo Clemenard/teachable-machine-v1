@@ -47,7 +47,7 @@ class LearningSection {
 		});
 
 		// this.trainingQuality = new TrainingQuality(element.querySelector('.quality'));
-
+		console.log(learningClassesElements);
 		this.wiresLeft = new WiresLeft(document.querySelector('.wires--left'), learningClassesElements);
 		this.wiresRight = new WiresRight(document.querySelector('.wires--right'), learningClassesElements);
 		this.highestIndex = null;
