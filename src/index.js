@@ -18,6 +18,7 @@ import GLOBALS from './config.js';
 import Button from './ui/components/Button.js';
 import IntroSection from './ui/modules/IntroSection.js';
 import InputSection from './ui/modules/InputSection.js';
+import Categorie from './ui/components/Categorie';
 import LearningSection from './ui/modules/LearningSection.js';
 import OutputSection from './ui/modules/OutputSection.js';
 import Wizard from './ui/modules/Wizard.js';
@@ -25,12 +26,11 @@ import Recording from './ui/modules/Recording';
 import RecordOpener from './ui/components/RecordOpener.js';
 import LaunchScreen from './ui/modules/wizard/LaunchScreen.js';
 import BrowserUtils from './ui/components/BrowserUtils';
-import Categorie from './ui/components/Categorie';
-
 function init() {
-new Categorie("orange")
-new Categorie("purple")
-new Categorie("green")
+$('#add-category').click(function() {
+	let cat = new Categorie();	
+});
+// document.getElementById('add-category').addEventListener('click', () => newCategory());
 	// Shim for forEach for IE/Edge
   if (typeof NodeList.prototype.forEach !== 'function') {
     NodeList.prototype.forEach = Array.prototype.forEach;
@@ -38,7 +38,11 @@ new Categorie("green")
 
   GLOBALS.browserUtils = new BrowserUtils();
   GLOBALS.launchScreen = new LaunchScreen();
-
+  GLOBALS.categories = [
+	new Categorie(),
+	new Categorie(),
+	new Categorie()
+];
   GLOBALS.learningSection = new LearningSection(document.querySelector('#learning-section'));
 	GLOBALS.inputSection = new InputSection(document.querySelector('#input-section'));
 	GLOBALS.outputSection = new OutputSection(document.querySelector('#output-section'));

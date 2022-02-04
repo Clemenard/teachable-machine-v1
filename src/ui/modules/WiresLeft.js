@@ -151,9 +151,8 @@ class WiresLeft {
         }
 
         this.width = this.element.offsetWidth;
-
         let firstLearningClass = this.learningClasses[0];
-        let lastLearningClass = this.learningClasses[2];
+        let lastLearningClass = this.learningClasses[this.learningClasses.length - 1];
 
         let classesHeight = lastLearningClass.offsetTop - firstLearningClass.offsetTop;
 
