@@ -25,9 +25,12 @@ import Recording from './ui/modules/Recording';
 import RecordOpener from './ui/components/RecordOpener.js';
 import LaunchScreen from './ui/modules/wizard/LaunchScreen.js';
 import BrowserUtils from './ui/components/BrowserUtils';
+import Categorie from './ui/components/Categorie';
 
 function init() {
-
+new Categorie("orange")
+new Categorie("purple")
+new Categorie("green")
 	// Shim for forEach for IE/Edge
   if (typeof NodeList.prototype.forEach !== 'function') {
     NodeList.prototype.forEach = Array.prototype.forEach;
